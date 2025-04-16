@@ -11,6 +11,8 @@
 
 - 进入项目根目录 Hust-Run
 - pip install -r requirements.txt
+- 本地安装雷电模拟器(网上自行搜索：https://www.ldmnq.com/)
+- 将仓库内的 apk 文件拖拽到模拟器上安装
 
 ## 使用方法
 
