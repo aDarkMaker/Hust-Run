@@ -168,7 +168,8 @@ class HustRunApp:
                 
                 # 更新位置
                 lat, lng = point['latitude'], point['longitude']
-                logger.debug(f"更新位置: {lat}, {lng}")
+                # logger.debug(f"更新位置: {lat}, {lng}")
+                logger.info(f"更新位置: {lat}, {lng}")
                 self.location_simulator.set_location(lat, lng)
                 
                 # 计算等待时间
@@ -192,12 +193,12 @@ class HustRunApp:
         try:
             # 点击结束运动按钮
             logger.info("点击结束运动按钮")
-            self.adb.tap(540, 1900)  # 假设这是结束按钮的位置
+            self.adb.tap(824, 1607)  # 假设这是结束按钮的位置
             time.sleep(2)
             
             # 确认结束运动
             logger.info("确认结束运动")
-            self.adb.tap(700, 1100)  # 假设这是确认按钮的位置
+            self.adb.tap(548, 1455)  # 假设这是确认按钮的位置
             time.sleep(5)
             
             # 关闭结果页面
