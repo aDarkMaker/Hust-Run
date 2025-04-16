@@ -23,7 +23,7 @@
 1. 克隆本仓库：
 
    ```
-   git clone https://github.com/yourusername/Hust-Run.git
+   git clone https://github.com/aDarkMaker/Hust-Run.git
    cd Hust-Run
    ```
 
@@ -96,7 +96,7 @@ Hust-Run/
 │   │   ├── adb_utils.py     # ADB操作工具
 │   │   ├── config_utils.py  # 配置文件工具
 │   │   └── logger.py        # 日志工具
-│   └── gui/                 # 图形界面目录(可选)
+│   └── gui/                 # 图形界面目录(可选) ——未实现
 │       ├── main_window.py   # 主窗口
 │       └── widgets.py       # 界面组件
 ├── tests/                   # 测试目录
