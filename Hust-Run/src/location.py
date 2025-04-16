@@ -7,6 +7,7 @@
 
 import time
 import random
+import geopy
 from typing import Tuple, List, Dict, Optional, Union
 
 from src.utils.logger import get_logger
@@ -99,17 +100,6 @@ class LocationSimulator:
             return False
     
     def set_location(self, latitude: float, longitude: float, altitude: float = 10.0) -> bool:
-        """
-        设置模拟位置
-        
-        Args:
-            latitude: 纬度
-            longitude: 经度
-            altitude: 海拔（米）
-            
-        Returns:
-            是否成功设置位置
-        """
         try:
             # 确保已启用模拟位置
             if not self.is_mocking:
@@ -122,17 +112,17 @@ class LocationSimulator:
             
             logger.debug(f"设置模拟位置: 纬度={latitude}, 经度={longitude}, 海拔={altitude}")
             
-            # 使用geo fix命令设置位置
-            result = self.adb.shell(f"geo fix {longitude} {latitude} {altitude}")
-            
-            # 使用am命令发送位置模拟广播（备用方法）
+            # 使用 am broadcast 命令设置位置
+            cmd = (
+                f"am broadcast -a android.intent.action.MOCK_LOCATION "
+                f"--ef latitude {latitude} --ef longitude {longitude} --ef altitude {altitude}"
+            )
+            result = self.adb.shell(cmd)
+        
+            # 检查命令执行结果
             if "error" in result.lower() or "unknown" in result.lower():
-                logger.debug("使用备用方法设置位置")
-                cmd = (
-                    f"am startservice -a {self.config.get('App', 'package_name')}.CMD_MOCK_LOCATION " +
-                    f"--ef latitude {latitude} --ef longitude {longitude} --ef altitude {altitude}"
-                )
-                self.adb.shell(cmd)
+                logger.error(f"设置位置失败: {result}")
+                return False
             
             # 记录当前位置
             self.current_location = {

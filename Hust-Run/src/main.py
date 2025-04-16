@@ -104,9 +104,9 @@ class HustRunApp:
         """开始运动"""
         try:
             # 点击开始运动按钮
-            logger.info("点击开始运动按钮")
+            logger.info("点击开始锻炼按钮")
             # 这里需要根据实际应用界面调整坐标或UI元素ID
-            self.adb.tap(540, 1600)  # 假设这是开始运动按钮的位置
+            self.adb.tap(521 , 950)  # 假设这是开始运动按钮的位置
             time.sleep(2)
             
             # 选择运动类型
@@ -114,19 +114,24 @@ class HustRunApp:
             logger.info(f"选择运动类型: {activity_type}")
             
             # 根据不同运动类型选择不同按钮
+            logger.info("开始课外锻炼")
             if activity_type == 0:  # 跑步
-                self.adb.tap(300, 800)
+                self.adb.tap(550, 1860)
             elif activity_type == 1:  # 骑行
                 self.adb.tap(540, 800)
             elif activity_type == 2:  # 行走
                 self.adb.tap(780, 800)
+            # 1和2是写着玩的，其实没这个选项
             
             time.sleep(2)
             
             # 点击确认按钮
             logger.info("确认开始运动")
-            self.adb.tap(540, 1800)
-            time.sleep(5)
+            self.adb.tap(500, 371)
+            time.sleep(2)
+            
+            self.adb.tap(500, 371)
+            time.sleep(2)
             
             return True
             
