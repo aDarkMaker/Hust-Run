@@ -1,0 +1,31 @@
+{
+  "name": "校园默认跑步路线",
+  "description": "华中科技大学校园内标准跑步路线",
+  "type": "running",
+  "distance": 3000,
+  "start_point": {
+    "latitude": 30.513137,
+    "longitude": 114.421432,
+    "name": "华中科技大学东操场"
+  },
+  "end_point": {
+    "latitude": 30.513137,
+    "longitude": 114.421432,
+    "name": "华中科技大学东操场"
+  },
+  "waypoints": [
+    {"latitude": 30.513137, "longitude": 114.421432, "name": "起点"},
+    {"latitude": 30.513715, "longitude": 114.421588, "name": "东北角"},
+    {"latitude": 30.513804, "longitude": 114.420650, "name": "西北角"},
+    {"latitude": 30.513095, "longitude": 114.420381, "name": "西南角"},
+    {"latitude": 30.512872, "longitude": 114.421309, "name": "东南角"},
+    {"latitude": 30.513137, "longitude": 114.421432, "name": "终点"}
+  ],
+  "repeat": 4,
+  "elevation_profile": {
+    "enabled": true,
+    "min_elevation": 20,
+    "max_elevation": 25,
+    "variation": 0.1
+  }
+}
