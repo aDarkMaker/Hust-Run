@@ -7,7 +7,6 @@
 
 import time
 import random
-import subprocess
 import geopy
 from typing import Tuple, List, Dict, Optional, Union
 
@@ -113,36 +112,12 @@ class LocationSimulator:
             
             logger.debug(f"设置模拟位置: 纬度={latitude}, 经度={longitude}, 海拔={altitude}")
             
-            # 先尝试ldconsole命令设置位置
-            ldconsole_path = r"D:\\zc\\ZC\\leidian\\LDPlayer9\\ldconsole.exe" 
-            emulator_name = "LDPlayer9"
-            ld_cmd = [
-                ldconsole_path,
-                "action",
-                "--name",
-                "--command", "setgps",
-                "--longitude", str(longitude),
-                "--latitude", str(latitude),
-            ]
-            try:
-                result = subprocess.run(ld_cmd, capture_output=True, text=True, timeout=5)
-                if result.returncode == 0:
-                    self.current_location = {
-                        'latitude': latitude,
-                        'longitude': longitude,
-                        'altitude': altitude,
-                        'timestamp': time.time()
-                    }
-                    return True
-            except Exception as e:
-                logger.error(f"ldconsole命令执行失败: {str(e)}")
             # 使用 am broadcast 命令设置位置
             cmd = (
                 f"am broadcast -a android.intent.action.MOCK_LOCATION "
                 f"--ef latitude {latitude} --ef longitude {longitude} --ef altitude {altitude}"
             )
             result = self.adb.shell(cmd)
-            logger.debug(f"adb命令执行结果：{result}")
         
             # 检查命令执行结果
             if "error" in result.lower() or "unknown" in result.lower():
@@ -165,12 +140,22 @@ class LocationSimulator:
     
     def move_to(self, target_lat: float, target_lng: float, 
                 speed: Optional[float] = None, steps: int = 10) -> bool:
+        """
+        平滑移动到目标位置
+        
+        Args:
+            target_lat: 目标纬度
+            target_lng: 目标经度
+            speed: 移动速度(米/秒)，如果为None则使用配置中的值
+            steps: 分几步完成移动
+            
+        Returns:
+            是否成功移动
+        """
         try:
             if not self.current_location:
                 logger.warning("当前位置未知，直接设置到目标位置")
-                if not self.set_location(target_lat, target_lng):
-                    logger.error("设置目标位置失败")
-                    return False
+                return self.set_location(target_lat, target_lng)
             
             # 获取当前位置和目标位置
             start_lat = self.current_location['latitude']
