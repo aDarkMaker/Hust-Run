@@ -106,7 +106,3 @@ Hust-Run/
 ├── requirements.txt         # 项目依赖
 └── README.md                # 项目说明文档
 ```
-
-## 许可证
-
-MIT
