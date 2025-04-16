@@ -33,8 +33,7 @@ class HustRunApp:
     def __init__(self):
         """初始化应用"""
         self.config = ConfigManager()
-        self.adb = ADBController(self.config.get("System", "adb_path"), 
-                                 self.config.get("Device", "device_id"))
+        self.adb = ADBController(self.config.get("System", "adb_path"), self.config.get("Device", "device_id"))
         self.login_handler = LoginHandler(self.adb, self.config)
         self.location_simulator = LocationSimulator(self.adb, self.config)
         self.route_generator = RouteGenerator(self.config)

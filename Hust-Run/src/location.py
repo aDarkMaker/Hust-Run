@@ -8,6 +8,7 @@
 import time
 import random
 import geopy
+import subprocess
 from typing import Tuple, List, Dict, Optional, Union
 
 from src.utils.logger import get_logger
@@ -33,6 +34,7 @@ class LocationSimulator:
         self.accuracy = self.config.get_float("Device", "location_accuracy")
         self.is_mocking = False
         self.current_location = None
+        self.is_ld_player = self._detect_ld_player()
     
     def enable_mock_location(self) -> bool:
         """
@@ -112,27 +114,12 @@ class LocationSimulator:
             
             logger.debug(f"设置模拟位置: 纬度={latitude}, 经度={longitude}, 海拔={altitude}")
             
-            # 使用 am broadcast 命令设置位置
-            cmd = (
-                f"am broadcast -a android.intent.action.MOCK_LOCATION "
-                f"--ef latitude {latitude} --ef longitude {longitude} --ef altitude {altitude}"
-            )
-            result = self.adb.shell(cmd)
-        
-            # 检查命令执行结果
-            if "error" in result.lower() or "unknown" in result.lower():
-                logger.error(f"设置位置失败: {result}")
-                return False
-            
-            # 记录当前位置
-            self.current_location = {
-                'latitude': latitude,
-                'longitude': longitude,
-                'altitude': altitude,
-                'timestamp': time.time()
-            }
-            
-            return True
+            if self.is_ld_player:
+                # 雷电模拟器使用wke命令
+                return self._set_ld_location(latitude, longitude, altitude)
+            else:
+                # 其他设备使用ADB命令
+                return self._set_adb_location(latitude, longitude, altitude)
             
         except Exception as e:
             logger.exception(f"设置模拟位置时出错: {str(e)}")
@@ -249,6 +236,116 @@ class LocationSimulator:
             logger.exception(f"模拟心率数据时出错: {str(e)}")
             return 75  # 返回一个默认值
     
+    def _detect_ld_player(self) -> bool:
+        """
+        检测是否为雷电模拟器
+        
+        Returns:
+            是否为雷电模拟器
+        """
+        try:
+            # 检查设备型号
+            model = self.adb.shell("getprop ro.product.model")
+            if "LDPlayer" in model:
+                logger.info("检测到雷电模拟器环境")
+                return True
+            return False
+        except Exception as e:
+            logger.warning(f"检测模拟器类型时出错: {str(e)}")
+            return False
+
+    def _set_ld_location(self, latitude: float, longitude: float, altitude: float) -> bool:
+        """
+        雷电模拟器专用定位方法
+        
+        Args:
+            latitude: 纬度
+            longitude: 经度
+            altitude: 海拔
+            
+        Returns:
+            是否设置成功
+        """
+        try:
+            # 使用wke命令设置位置
+            cmd = f"wke.exe --imei {self.adb.device_id} geo fix {longitude} {latitude}"
+            result = subprocess.run(cmd, shell=True, capture_output=True, text=True)
+            
+            if result.returncode != 0:
+                logger.error(f"雷电模拟器定位失败: {result.stderr}")
+                return False
+                
+            # 记录当前位置
+            self.current_location = {
+                'latitude': latitude,
+                'longitude': longitude,
+                'altitude': altitude,
+                'timestamp': time.time()
+            }
+            return True
+        except Exception as e:
+            logger.exception(f"雷电模拟器定位时出错: {str(e)}")
+            return False
+
+    def _set_adb_location(self, latitude: float, longitude: float, altitude: float) -> bool:
+        """
+        ADB通用定位方法
+        
+        Args:
+            latitude: 纬度
+            longitude: 经度
+            altitude: 海拔
+            
+        Returns:
+            是否设置成功
+        """
+        try:
+            # 检查位置服务状态
+            if not self._check_location_service():
+                logger.warning("位置服务可能不可用")
+                
+            # 使用 am broadcast 命令设置位置
+            cmd = (
+                f"am broadcast -a android.intent.action.MOCK_LOCATION "
+                f"--ef latitude {latitude} --ef longitude {longitude} --ef altitude {altitude}"
+            )
+            result = self.adb.shell(cmd)
+        
+            # 检查命令执行结果
+            if "error" in result.lower() or "unknown" in result.lower():
+                logger.error(f"设置位置失败: {result}")
+                return False
+            
+            # 记录当前位置
+            self.current_location = {
+                'latitude': latitude,
+                'longitude': longitude,
+                'altitude': altitude,
+                'timestamp': time.time()
+            }
+            return True
+        except Exception as e:
+            logger.exception(f"ADB定位时出错: {str(e)}")
+            return False
+
+    def _check_location_service(self) -> bool:
+        """
+        检查位置服务状态(包括com.android.location.fused)
+        
+        Returns:
+            位置服务是否可用
+        """
+        try:
+            # 检查位置服务状态
+            output = self.adb.shell("dumpsys location")
+            if "com.android.location.fused" not in output:
+                logger.warning("位置服务可能不可用")
+                return False
+            return True
+        except Exception as e:
+            logger.exception(f"检查位置服务时出错: {str(e)}")
+            return False
+
     def _check_developer_options(self) -> bool:
         """
         检查设备是否已启用开发者选项和模拟位置

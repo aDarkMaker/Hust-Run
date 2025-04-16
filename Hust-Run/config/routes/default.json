@@ -4,24 +4,24 @@
   "type": "running",
   "distance": 3000,
   "start_point": {
-    "latitude": 30.513137,
-    "longitude": 114.421432,
-    "name": "华中科技大学东操场"
+    "latitude": 30.515937,
+    "longitude": 114.425774,
+    "name": "华中科技大学中操场"
   },
   "end_point": {
-    "latitude": 30.513137,
-    "longitude": 114.421432,
-    "name": "华中科技大学东操场"
+    "latitude": 30.515937,
+    "longitude": 114.425774,
+    "name": "华中科技大学中操场"
   },
   "waypoints": [
-    {"latitude": 30.513137, "longitude": 114.421432, "name": "起点"},
-    {"latitude": 30.513715, "longitude": 114.421588, "name": "东北角"},
-    {"latitude": 30.513804, "longitude": 114.420650, "name": "西北角"},
-    {"latitude": 30.513095, "longitude": 114.420381, "name": "西南角"},
-    {"latitude": 30.512872, "longitude": 114.421309, "name": "东南角"},
-    {"latitude": 30.513137, "longitude": 114.421432, "name": "终点"}
+    {"latitude": 30.515937, "longitude": 114.425774, "name": "起点"},
+    {"latitude": 30.515937, "longitude": 114.425774, "name": "左上"},
+    {"latitude": 30.515806, "longitude": 114.426623, "name": "右上"},
+    {"latitude": 30.514465, "longitude": 114.426493, "name": "右下"},
+    {"latitude": 30.514472, "longitude": 114.425635, "name": "左下"},
+    {"latitude": 30.515937, "longitude": 114.425774, "name": "终点"}
   ],
-  "repeat": 4,
+  "repeat": 8,
   "elevation_profile": {
     "enabled": true,
     "min_elevation": 20,
