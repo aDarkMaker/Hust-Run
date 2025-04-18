@@ -126,3 +126,19 @@ Hust-Run/
 - 手机通过数据线连接电脑
 - 电脑通过 adb 系列指令创建虚拟的定位环境
 - 模拟运动并完成（暂时不考虑自动化）
+
+```
+Hust-Run-new/
+├── data/                    # 数据存储目录
+│   └── history.db           # 运动历史记录数据库
+├── logs/                    # 日志目录
+│   └── app.log              # 应用日志
+├── src/                     # 源代码目录
+│   ├── main.py              # 主程序入口
+│   ├── run.py               # 模拟运动
+│   ├── creat_env.py         # 隔离操作系统
+│   ├── logger.py            # 日志模块
+│   ├── database.py          # 数据库操作
+├── requirements.txt         # 项目依赖
+└── README.md                # 项目说明文档
+```
