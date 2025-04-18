@@ -14,8 +14,8 @@ from typing import List, Dict, Optional, Tuple
 import numpy as np
 from geopy.distance import geodesic
 
-from src.logger import get_logger
-from src.database import HistoryDatabase
+from logger import get_logger
+from database import HistoryDatabase
 
 logger = get_logger()
 

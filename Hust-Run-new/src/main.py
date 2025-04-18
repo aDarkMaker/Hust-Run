@@ -8,10 +8,10 @@
 import argparse
 from typing import Optional
 
-from src.adb import ADBController
-from src.run import RunSimulator
-from src.creat_env import EnvironmentCreator
-from src.logger import get_logger
+from adb import ADBController
+from run import RunSimulator
+from creat_env import EnvironmentCreator
+from logger import get_logger
 
 logger = get_logger()
 

@@ -7,7 +7,7 @@ import subprocess
 import re
 from typing import List, Optional, Tuple, Union
 
-from src.logger import get_logger
+from logger import get_logger
 
 logger = get_logger()
 

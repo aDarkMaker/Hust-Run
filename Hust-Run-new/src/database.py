@@ -10,7 +10,7 @@ import sqlite3
 import time
 from typing import List, Dict, Optional, Tuple
 
-from src.logger import get_logger
+from logger import get_logger
 
 logger = get_logger()
 

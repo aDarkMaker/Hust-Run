@@ -10,8 +10,8 @@ import random
 import geopy
 from typing import Dict, Optional
 
-from src.logger import get_logger
-from src.adb import ADBController
+from logger import get_logger
+from adb import ADBController
 
 logger = get_logger()
 
