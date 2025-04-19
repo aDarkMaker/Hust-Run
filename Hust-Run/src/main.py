@@ -67,7 +67,7 @@ class HustRunApp:
             app_package = self.config.get("App", "package_name")
             app_activity = self.config.get("App", "main_activity")
             self.adb.start_app(f"{app_package}/{app_activity}")
-            time.sleep(3)
+            time.sleep(8)
             
             # 登录
             if not self.login_handler.auto_login():
