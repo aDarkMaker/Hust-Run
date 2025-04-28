@@ -1,0 +1,240 @@
+2025-04-28 15:18:18,442 - HustRun - INFO - 启动华中科技大学校园跑模拟工具
+2025-04-28 15:18:18,454 - HustRun - ERROR - 程序发生异常
+Traceback (most recent call last):
+  File "D:\zc\ZC\Hust-Run\Run\main.py", line 139, in main
+    simulator = LocationSimulator(config_path)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\zc\ZC\Hust-Run\Run\run.py", line 22, in __init__
+    self.distance = self.config.getint('Basic', 'distance')  # 单位米
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lenovo\AppData\Local\Programs\Python\Python312\Lib\configparser.py", line 796, in getint
+    return self._get_conv(section, option, int, raw=raw, vars=vars,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lenovo\AppData\Local\Programs\Python\Python312\Lib\configparser.py", line 786, in _get_conv
+    return self._get(section, conv, option, raw=raw, vars=vars,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lenovo\AppData\Local\Programs\Python\Python312\Lib\configparser.py", line 781, in _get
+    return conv(self.get(section, option, **kwargs))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: '3000  # 运动距离，单位米'
+2025-04-28 15:18:28,743 - HustRun - INFO - 启动华中科技大学校园跑模拟工具
+2025-04-28 15:18:28,745 - HustRun - ERROR - 程序发生异常
+Traceback (most recent call last):
+  File "D:\zc\ZC\Hust-Run\Run\main.py", line 139, in main
+    simulator = LocationSimulator(config_path)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\zc\ZC\Hust-Run\Run\run.py", line 22, in __init__
+    self.distance = self.config.getint('Basic', 'distance')  # 单位米
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lenovo\AppData\Local\Programs\Python\Python312\Lib\configparser.py", line 796, in getint
+    return self._get_conv(section, option, int, raw=raw, vars=vars,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lenovo\AppData\Local\Programs\Python\Python312\Lib\configparser.py", line 786, in _get_conv
+    return self._get(section, conv, option, raw=raw, vars=vars,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lenovo\AppData\Local\Programs\Python\Python312\Lib\configparser.py", line 781, in _get
+    return conv(self.get(section, option, **kwargs))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: '3000  # 运动距离，单位米'
+2025-04-28 15:19:18,457 - HustRun - INFO - 启动华中科技大学校园跑模拟工具
+2025-04-28 15:19:18,532 - HustRun.DeviceConnector - ERROR - 未找到已连接的设备，请检查USB连接
+2025-04-28 15:22:07,421 - HustRun - INFO - 启动华中科技大学校园跑模拟工具
+2025-04-28 15:22:07,481 - HustRun.DeviceConnector - INFO - ADB路径: adb
+2025-04-28 15:22:07,481 - HustRun.DeviceConnector - INFO - 设备ID: R5CW22AWC9R
+2025-04-28 15:22:07,481 - HustRun.LocationSimulator - INFO - 初始化完成: 距离=3000米, 速度=9.0km/h, 总步数=240
+2025-04-28 15:22:07,481 - HustRun.LocationSimulator - INFO - 开始模拟运动
+2025-04-28 15:22:07,481 - HustRun.DeviceConnector - INFO - 等待设备连接，超时时间: 30秒
+2025-04-28 15:22:07,547 - HustRun.DeviceConnector - INFO - 设备已连接
+2025-04-28 15:22:07,550 - HustRun.LocationSimulator - INFO - 运动信息: 距离=3000米, 预计时间=20分0秒
+2025-04-28 15:22:46,775 - HustRun.DeviceConnector - WARNING - 应用未设置为模拟位置应用，请在开发者选项中手动设置
+2025-04-28 15:23:38,227 - HustRun.DeviceConnector - ERROR - 模拟位置失败: Command '['adb', '-s', 'R5CW22AWC9R', 'shell', 'am startservice -e latitude 30.513087570922952 -e longitude 114.42025784061747', '-e accuracy 3.0 -n net.crigh.hzkjsport/.service.LocationMockService']' returned non-zero exit status 255.
+2025-04-28 15:23:38,227 - HustRun.LocationSimulator - ERROR - 模拟位置失败，步骤 1/240
+2025-04-28 15:23:43,143 - HustRun - INFO - 启动华中科技大学校园跑模拟工具
+2025-04-28 15:23:43,190 - HustRun.DeviceConnector - INFO - ADB路径: adb
+2025-04-28 15:23:43,190 - HustRun.DeviceConnector - INFO - 设备ID: R5CW22AWC9R
+2025-04-28 15:23:43,190 - HustRun.LocationSimulator - INFO - 初始化完成: 距离=3000米, 速度=9.0km/h, 总步数=240
+2025-04-28 15:23:43,190 - HustRun.LocationSimulator - INFO - 开始模拟运动
+2025-04-28 15:23:43,190 - HustRun.DeviceConnector - INFO - 等待设备连接，超时时间: 30秒
+2025-04-28 15:23:43,259 - HustRun.DeviceConnector - INFO - 设备已连接
+2025-04-28 15:23:43,260 - HustRun.LocationSimulator - INFO - 运动信息: 距离=3000米, 预计时间=20分0秒
+2025-04-28 15:23:44,272 - HustRun.DeviceConnector - WARNING - 应用未设置为模拟位置应用，请在开发者选项中手动设置
+2025-04-28 15:23:58,613 - HustRun.DeviceConnector - ERROR - 模拟位置失败: Command '['adb', '-s', 'R5CW22AWC9R', 'shell', 'am startservice -e latitude 30.513080098470272 -e longitude 114.42026480725681', '-e accuracy 3.0 -n net.crigh.hzkjsport/.service.LocationMockService']' returned non-zero exit status 255.
+2025-04-28 15:23:58,615 - HustRun.LocationSimulator - ERROR - 模拟位置失败，步骤 1/240
+2025-04-28 15:27:48,364 - HustRun - INFO - 启动华中科技大学校园跑模拟工具
+2025-04-28 15:27:48,425 - HustRun.DeviceConnector - INFO - ADB路径: adb
+2025-04-28 15:27:48,425 - HustRun.DeviceConnector - INFO - 设备ID: R5CW22AWC9R
+2025-04-28 15:27:48,425 - HustRun.LocationSimulator - INFO - 初始化完成: 距离=3000米, 速度=9.0km/h, 总步数=240
+2025-04-28 15:27:48,425 - HustRun.LocationSimulator - INFO - 开始模拟运动
+2025-04-28 15:27:48,426 - HustRun.DeviceConnector - INFO - 等待设备连接，超时时间: 30秒
+2025-04-28 15:27:48,484 - HustRun.DeviceConnector - INFO - 设备已连接
+2025-04-28 15:27:48,485 - HustRun.LocationSimulator - INFO - 运动信息: 距离=3000米, 预计时间=20分0秒
+2025-04-28 15:27:49,905 - HustRun.DeviceConnector - WARNING - 应用未设置为模拟位置应用，请在开发者选项中手动设置
+2025-04-28 15:27:51,096 - HustRun.DeviceConnector - ERROR - 模拟位置失败: Command '['adb', '-s', 'R5CW22AWC9R', 'shell', 'am startservice -e latitude 30.51308827716789 -e longitude 114.42026127195406', '-e accuracy 3.0 -n net.crigh.hzkjsport/.service.LocationMockService']' returned non-zero exit status 255.
+2025-04-28 15:27:51,096 - HustRun.LocationSimulator - ERROR - 模拟位置失败，步骤 1/240
+2025-04-28 15:30:12,402 - HustRun - INFO - 启动华中科技大学校园跑模拟工具
+2025-04-28 15:30:12,459 - HustRun.DeviceConnector - INFO - ADB路径: adb
+2025-04-28 15:30:12,459 - HustRun.DeviceConnector - INFO - 设备ID: R5CW22AWC9R
+2025-04-28 15:30:12,459 - HustRun.LocationSimulator - INFO - 初始化完成: 距离=3000米, 速度=9.0km/h, 总步数=240
+2025-04-28 15:30:12,459 - HustRun.LocationSimulator - INFO - 开始模拟运动
+2025-04-28 15:30:12,459 - HustRun.DeviceConnector - INFO - 等待设备连接，超时时间: 30秒
+2025-04-28 15:30:12,521 - HustRun.DeviceConnector - INFO - 设备已连接
+2025-04-28 15:30:12,521 - HustRun.LocationSimulator - INFO - 运动信息: 距离=3000米, 预计时间=20分0秒
+2025-04-28 15:30:14,156 - HustRun.DeviceConnector - WARNING - 应用未设置为模拟位置应用，请在开发者选项中手动设置
+2025-04-28 15:30:15,170 - HustRun.DeviceConnector - ERROR - 模拟位置失败: Command '['adb', '-s', 'R5CW22AWC9R', 'shell', 'am', 'startservice', '-e', 'latitude', '30.51307984554007', '-e', 'longitude', '114.42025867477531', '-e', 'accuracy', '3.0', '-n', 'net.crigh.hzkjsport/.service.LocationMockService']' returned non-zero exit status 255.
+2025-04-28 15:30:15,170 - HustRun.LocationSimulator - ERROR - 模拟位置失败，步骤 1/240
+2025-04-28 15:30:50,836 - HustRun - INFO - 启动华中科技大学校园跑模拟工具
+2025-04-28 15:30:50,883 - HustRun.DeviceConnector - INFO - ADB路径: adb
+2025-04-28 15:30:50,883 - HustRun.DeviceConnector - INFO - 设备ID: R5CW22AWC9R
+2025-04-28 15:30:50,883 - HustRun.LocationSimulator - INFO - 初始化完成: 距离=3000米, 速度=9.0km/h, 总步数=240
+2025-04-28 15:30:50,883 - HustRun.LocationSimulator - INFO - 开始模拟运动
+2025-04-28 15:30:50,883 - HustRun.DeviceConnector - INFO - 等待设备连接，超时时间: 30秒
+2025-04-28 15:30:50,931 - HustRun.DeviceConnector - INFO - 设备已连接
+2025-04-28 15:30:50,932 - HustRun.LocationSimulator - INFO - 运动信息: 距离=3000米, 预计时间=20分0秒
+2025-04-28 15:30:51,934 - HustRun.DeviceConnector - WARNING - 应用未设置为模拟位置应用，请在开发者选项中手动设置
+2025-04-28 15:30:52,700 - HustRun.DeviceConnector - ERROR - 模拟位置失败: Command '['adb', '-s', 'R5CW22AWC9R', 'shell', 'am', 'startservice', '-e', 'latitude', '30.513081374661432', '-e', 'longitude', '114.42026559725294', '-e', 'accuracy', '3.0', '-n', 'net.crigh.hzkjsport/.service.LocationMockService']' returned non-zero exit status 255.
+2025-04-28 15:30:52,700 - HustRun.LocationSimulator - ERROR - 模拟位置失败，步骤 1/240
+2025-04-28 15:35:43,779 - HustRun - INFO - 启动华中科技大学校园跑模拟工具
+2025-04-28 15:35:43,834 - HustRun.DeviceConnector - INFO - ADB路径: adb
+2025-04-28 15:35:43,835 - HustRun.DeviceConnector - INFO - 设备ID: R5CW22AWC9R
+2025-04-28 15:35:43,835 - HustRun.LocationSimulator - INFO - 初始化完成: 距离=3000米, 速度=9.0km/h, 总步数=240
+2025-04-28 15:35:43,835 - HustRun.LocationSimulator - INFO - 开始模拟运动
+2025-04-28 15:35:43,835 - HustRun.DeviceConnector - INFO - 等待设备连接，超时时间: 30秒
+2025-04-28 15:35:43,910 - HustRun.DeviceConnector - INFO - 设备已连接
+2025-04-28 15:35:43,911 - HustRun.LocationSimulator - INFO - 运动信息: 距离=3000米, 预计时间=20分0秒
+2025-04-28 15:35:45,030 - HustRun.DeviceConnector - WARNING - 应用未设置为模拟位置应用，请在开发者选项中手动设置
+2025-04-28 15:35:45,630 - HustRun.DeviceConnector - INFO - 已设置应用的模拟位置权限
+2025-04-28 15:35:45,738 - HustRun.DeviceConnector - WARNING - 通过应用服务发送位置失败: Starting service: Intent { cmp=net.crigh.hzkjsport/.service.LocationMockService (has extras) }
+
+2025-04-28 15:35:45,800 - HustRun.DeviceConnector - WARNING - 通过geo fix命令发送位置失败: 
+2025-04-28 15:35:45,801 - HustRun.LocationSimulator - ERROR - 模拟位置失败，步骤 1/240
+2025-04-28 15:37:51,666 - HustRun - INFO - 启动华中科技大学校园跑模拟工具
+2025-04-28 15:37:51,717 - HustRun.DeviceConnector - INFO - ADB路径: adb
+2025-04-28 15:37:51,717 - HustRun.DeviceConnector - INFO - 设备ID: R5CW22AWC9R
+2025-04-28 15:37:51,718 - HustRun.LocationSimulator - INFO - 初始化完成: 距离=3000米, 速度=9.0km/h, 总步数=240
+2025-04-28 15:37:51,718 - HustRun.LocationSimulator - INFO - 开始模拟运动
+2025-04-28 15:37:51,718 - HustRun.DeviceConnector - INFO - 等待设备连接，超时时间: 30秒
+2025-04-28 15:37:51,787 - HustRun.DeviceConnector - INFO - 设备已连接
+2025-04-28 15:37:51,787 - HustRun.LocationSimulator - INFO - 运动信息: 距离=3000米, 预计时间=20分0秒
+2025-04-28 15:37:52,714 - HustRun.DeviceConnector - WARNING - 应用未设置为模拟位置应用，请在开发者选项中手动设置
+2025-04-28 15:37:53,748 - HustRun.DeviceConnector - INFO - 已设置应用的模拟位置权限
+2025-04-28 15:37:53,858 - HustRun.DeviceConnector - WARNING - 通过应用服务发送位置失败: Starting service: Intent { cmp=net.crigh.hzkjsport/.service.LocationMockService (has extras) }
+
+2025-04-28 15:37:53,918 - HustRun.DeviceConnector - WARNING - 通过geo fix命令发送位置失败: 
+2025-04-28 15:37:53,918 - HustRun.LocationSimulator - ERROR - 模拟位置失败，步骤 1/240
+2025-04-28 15:42:19,791 - HustRun - INFO - 启动华中科技大学校园跑模拟工具
+2025-04-28 15:42:19,853 - HustRun.DeviceConnector - INFO - ADB路径: adb
+2025-04-28 15:42:19,853 - HustRun.DeviceConnector - INFO - 设备ID: R5CW22AWC9R
+2025-04-28 15:42:19,853 - HustRun.LocationSimulator - INFO - 初始化完成: 距离=3000米, 速度=9.0km/h, 总步数=240
+2025-04-28 15:42:19,853 - HustRun.LocationSimulator - INFO - 开始模拟运动
+2025-04-28 15:42:19,853 - HustRun.DeviceConnector - INFO - 等待设备连接，超时时间: 30秒
+2025-04-28 15:42:19,922 - HustRun.DeviceConnector - INFO - 设备已连接
+2025-04-28 15:42:19,922 - HustRun.LocationSimulator - INFO - 运动信息: 距离=3000米, 预计时间=20分0秒
+2025-04-28 15:42:20,816 - HustRun.DeviceConnector - WARNING - 应用未设置为模拟位置应用，请在开发者选项中手动设置
+2025-04-28 15:42:21,665 - HustRun.DeviceConnector - INFO - 已设置应用的模拟位置权限
+2025-04-28 15:42:21,775 - HustRun.DeviceConnector - WARNING - 通过应用服务发送位置失败: Starting service: Intent { cmp=net.crigh.hzkjsport/.service.LocationMockService (has extras) }
+
+2025-04-28 15:42:21,845 - HustRun.DeviceConnector - WARNING - 通过geo fix命令发送位置失败: 
+2025-04-28 15:42:22,154 - HustRun.DeviceConnector - INFO - 通过setprop设置模拟位置
+2025-04-28 15:42:22,215 - HustRun.DeviceConnector - WARNING - setprop设置可能未生效
+2025-04-28 15:42:22,319 - HustRun.DeviceConnector - INFO - 已广播模拟位置信息
+2025-04-28 15:42:27,525 - HustRun.DeviceConnector - WARNING - 应用未设置为模拟位置应用，请在开发者选项中手动设置
+2025-04-28 15:42:31,836 - HustRun.DeviceConnector - INFO - 已设置应用的模拟位置权限
+2025-04-28 15:42:31,942 - HustRun.DeviceConnector - WARNING - 通过应用服务发送位置失败: Starting service: Intent { cmp=net.crigh.hzkjsport/.service.LocationMockService (has extras) }
+
+2025-04-28 15:42:32,016 - HustRun.DeviceConnector - WARNING - 通过geo fix命令发送位置失败: 
+2025-04-28 15:42:32,313 - HustRun.DeviceConnector - INFO - 通过setprop设置模拟位置
+2025-04-28 15:42:32,391 - HustRun.DeviceConnector - WARNING - setprop设置可能未生效
+2025-04-28 15:42:32,499 - HustRun.DeviceConnector - INFO - 已广播模拟位置信息
+2025-04-28 15:42:37,719 - HustRun.DeviceConnector - WARNING - 应用未设置为模拟位置应用，请在开发者选项中手动设置
+2025-04-28 15:43:00,650 - HustRun.DeviceConnector - INFO - 已设置应用的模拟位置权限
+2025-04-28 15:43:00,743 - HustRun.DeviceConnector - WARNING - 通过应用服务发送位置失败: Starting service: Intent { cmp=net.crigh.hzkjsport/.service.LocationMockService (has extras) }
+
+2025-04-28 15:43:00,801 - HustRun.DeviceConnector - WARNING - 通过geo fix命令发送位置失败: 
+2025-04-28 15:43:01,075 - HustRun.DeviceConnector - INFO - 通过setprop设置模拟位置
+2025-04-28 15:43:01,134 - HustRun.DeviceConnector - WARNING - setprop设置可能未生效
+2025-04-28 15:43:01,230 - HustRun.DeviceConnector - INFO - 已广播模拟位置信息
+2025-04-28 15:43:06,417 - HustRun.DeviceConnector - WARNING - 应用未设置为模拟位置应用，请在开发者选项中手动设置
+2025-04-28 15:43:44,100 - HustRun.LocationSimulator - INFO - 用户中断运动模拟
+2025-04-28 15:45:42,501 - HustRun - INFO - 启动华中科技大学校园跑模拟工具
+2025-04-28 15:45:42,563 - HustRun.DeviceConnector - INFO - ADB路径: adb
+2025-04-28 15:45:42,563 - HustRun.DeviceConnector - INFO - 设备ID: R5CW22AWC9R
+2025-04-28 15:45:42,563 - HustRun.LocationSimulator - INFO - 初始化完成: 距离=3000米, 速度=9.0km/h, 总步数=240
+2025-04-28 15:45:42,563 - HustRun.LocationSimulator - INFO - 开始模拟运动
+2025-04-28 15:45:42,563 - HustRun.DeviceConnector - INFO - 等待设备连接，超时时间: 30秒
+2025-04-28 15:45:42,630 - HustRun.DeviceConnector - INFO - 设备已连接
+2025-04-28 15:45:42,630 - HustRun.LocationSimulator - INFO - 运动信息: 距离=3000米, 预计时间=20分0秒
+2025-04-28 15:45:43,623 - HustRun.DeviceConnector - WARNING - 应用未设置为模拟位置应用，请在开发者选项中手动设置
+2025-04-28 15:45:44,379 - HustRun.DeviceConnector - INFO - 已设置应用的模拟位置权限
+2025-04-28 15:45:44,380 - HustRun.DeviceConnector - INFO - 尝试通过应用广播接收器发送模拟位置...
+2025-04-28 15:45:44,486 - HustRun.DeviceConnector - INFO - 应用广播接收器方式发送模拟位置成功
+2025-04-28 15:45:49,686 - HustRun.DeviceConnector - WARNING - 应用未设置为模拟位置应用，请在开发者选项中手动设置
+2025-04-28 15:45:53,295 - HustRun.DeviceConnector - INFO - 已设置应用的模拟位置权限
+2025-04-28 15:45:53,296 - HustRun.DeviceConnector - INFO - 尝试通过应用广播接收器发送模拟位置...
+2025-04-28 15:45:53,404 - HustRun.DeviceConnector - INFO - 应用广播接收器方式发送模拟位置成功
+2025-04-28 15:45:58,620 - HustRun.DeviceConnector - WARNING - 应用未设置为模拟位置应用，请在开发者选项中手动设置
+2025-04-28 15:46:20,844 - HustRun.DeviceConnector - INFO - 已设置应用的模拟位置权限
+2025-04-28 15:46:20,844 - HustRun.DeviceConnector - INFO - 尝试通过应用广播接收器发送模拟位置...
+2025-04-28 15:46:20,934 - HustRun.DeviceConnector - INFO - 应用广播接收器方式发送模拟位置成功
+2025-04-28 15:46:26,157 - HustRun.DeviceConnector - WARNING - 应用未设置为模拟位置应用，请在开发者选项中手动设置
+2025-04-28 15:46:27,247 - HustRun.DeviceConnector - INFO - 已设置应用的模拟位置权限
+2025-04-28 15:46:27,247 - HustRun.DeviceConnector - INFO - 尝试通过应用广播接收器发送模拟位置...
+2025-04-28 15:46:27,377 - HustRun.DeviceConnector - INFO - 应用广播接收器方式发送模拟位置成功
+2025-04-28 15:46:32,572 - HustRun.DeviceConnector - WARNING - 应用未设置为模拟位置应用，请在开发者选项中手动设置
+2025-04-28 15:46:32,945 - HustRun.LocationSimulator - INFO - 用户中断运动模拟
+2025-04-28 15:46:59,009 - HustRun - INFO - 启动华中科技大学校园跑模拟工具
+2025-04-28 15:46:59,059 - HustRun.DeviceConnector - INFO - ADB路径: adb
+2025-04-28 15:46:59,059 - HustRun.DeviceConnector - INFO - 设备ID: R5CW22AWC9R
+2025-04-28 15:46:59,059 - HustRun.LocationSimulator - INFO - 初始化完成: 距离=3000米, 速度=9.0km/h, 总步数=240
+2025-04-28 15:46:59,059 - HustRun.LocationSimulator - INFO - 开始模拟运动
+2025-04-28 15:46:59,059 - HustRun.DeviceConnector - INFO - 等待设备连接，超时时间: 30秒
+2025-04-28 15:46:59,113 - HustRun.DeviceConnector - INFO - 设备已连接
+2025-04-28 15:46:59,115 - HustRun.LocationSimulator - INFO - 运动信息: 距离=3000米, 预计时间=20分0秒
+2025-04-28 15:46:59,906 - HustRun.DeviceConnector - WARNING - 应用未设置为模拟位置应用，请在开发者选项中手动设置
+2025-04-28 15:47:02,696 - HustRun.DeviceConnector - INFO - 已设置应用的模拟位置权限
+2025-04-28 15:47:02,698 - HustRun.DeviceConnector - INFO - 尝试通过应用广播接收器发送模拟位置...
+2025-04-28 15:47:02,803 - HustRun.DeviceConnector - INFO - 应用广播接收器方式发送模拟位置成功
+2025-04-28 15:47:08,011 - HustRun.DeviceConnector - WARNING - 应用未设置为模拟位置应用，请在开发者选项中手动设置
+2025-04-28 15:49:26,469 - HustRun - INFO - 启动华中科技大学校园跑模拟工具
+2025-04-28 15:49:26,528 - HustRun.DeviceConnector - INFO - ADB路径: adb
+2025-04-28 15:49:26,528 - HustRun.DeviceConnector - INFO - 设备ID: R5CW22AWC9R
+2025-04-28 15:49:26,528 - HustRun.LocationSimulator - INFO - 初始化完成: 距离=3000米, 速度=9.0km/h, 总步数=240
+2025-04-28 15:49:26,528 - HustRun.LocationSimulator - INFO - 开始模拟运动
+2025-04-28 15:49:26,528 - HustRun.DeviceConnector - INFO - 等待设备连接，超时时间: 30秒
+2025-04-28 15:49:26,586 - HustRun.DeviceConnector - INFO - 设备已连接
+2025-04-28 15:49:26,586 - HustRun.LocationSimulator - INFO - 运动信息: 距离=3000米, 预计时间=20分0秒
+2025-04-28 15:49:38,738 - HustRun.DeviceConnector - WARNING - 应用未设置为模拟位置应用，请在开发者选项中手动设置
+2025-04-28 15:49:46,932 - HustRun.DeviceConnector - INFO - 已设置应用的模拟位置权限
+2025-04-28 15:49:46,932 - HustRun.DeviceConnector - INFO - 尝试通过应用广播接收器发送模拟位置...
+2025-04-28 15:49:47,025 - HustRun.DeviceConnector - INFO - 应用广播接收器方式发送模拟位置成功
+2025-04-28 15:49:52,220 - HustRun.DeviceConnector - WARNING - 应用未设置为模拟位置应用，请在开发者选项中手动设置
+2025-04-28 15:50:06,305 - HustRun.DeviceConnector - INFO - 已设置应用的模拟位置权限
+2025-04-28 15:50:06,305 - HustRun.DeviceConnector - INFO - 尝试通过应用广播接收器发送模拟位置...
+2025-04-28 15:50:06,400 - HustRun.DeviceConnector - INFO - 应用广播接收器方式发送模拟位置成功
+2025-04-28 15:50:11,578 - HustRun.DeviceConnector - WARNING - 应用未设置为模拟位置应用，请在开发者选项中手动设置
+2025-04-28 15:50:12,012 - HustRun.LocationSimulator - INFO - 用户中断运动模拟
+2025-04-28 18:07:46,984 - HustRun - INFO - 启动华中科技大学校园跑模拟工具
+2025-04-28 18:07:47,044 - HustRun.DeviceConnector - INFO - ADB路径: adb
+2025-04-28 18:07:47,044 - HustRun.DeviceConnector - INFO - 设备ID: R5CW22AWC9R
+2025-04-28 18:07:47,044 - HustRun.LocationSimulator - INFO - 初始化完成: 距离=3000米, 速度=9.0km/h, 总步数=240
+2025-04-28 18:07:47,044 - HustRun.LocationSimulator - INFO - 开始模拟运动
+2025-04-28 18:07:47,044 - HustRun.DeviceConnector - INFO - 等待设备连接，超时时间: 30秒
+2025-04-28 18:07:47,122 - HustRun.DeviceConnector - INFO - 设备已连接
+2025-04-28 18:07:47,123 - HustRun.LocationSimulator - INFO - 运动信息: 距离=3000米, 预计时间=20分0秒
+2025-04-28 18:07:48,507 - HustRun.DeviceConnector - WARNING - 应用未设置为模拟位置应用，请在开发者选项中手动设置
+2025-04-28 18:07:49,403 - HustRun.DeviceConnector - INFO - 已设置应用的模拟位置权限
+2025-04-28 18:07:49,404 - HustRun.DeviceConnector - INFO - 尝试通过应用广播接收器发送模拟位置...
+2025-04-28 18:07:49,493 - HustRun.DeviceConnector - INFO - 应用广播接收器方式发送模拟位置成功
+2025-04-28 18:07:54,775 - HustRun.DeviceConnector - WARNING - 应用未设置为模拟位置应用，请在开发者选项中手动设置
+2025-04-28 18:08:26,898 - HustRun.DeviceConnector - INFO - 已设置应用的模拟位置权限
+2025-04-28 18:08:26,898 - HustRun.DeviceConnector - INFO - 尝试通过应用广播接收器发送模拟位置...
+2025-04-28 18:08:27,018 - HustRun.DeviceConnector - INFO - 应用广播接收器方式发送模拟位置成功
+2025-04-28 18:08:32,232 - HustRun.DeviceConnector - WARNING - 应用未设置为模拟位置应用，请在开发者选项中手动设置
+2025-04-28 18:11:55,997 - HustRun.DeviceConnector - INFO - 已设置应用的模拟位置权限
+2025-04-28 18:11:55,998 - HustRun.DeviceConnector - INFO - 尝试通过应用广播接收器发送模拟位置...
+2025-04-28 18:11:56,101 - HustRun.DeviceConnector - INFO - 应用广播接收器方式发送模拟位置成功
+2025-04-28 18:12:01,339 - HustRun.DeviceConnector - WARNING - 应用未设置为模拟位置应用，请在开发者选项中手动设置
+2025-04-28 18:12:02,335 - HustRun.DeviceConnector - INFO - 已设置应用的模拟位置权限
+2025-04-28 18:12:02,335 - HustRun.DeviceConnector - INFO - 尝试通过应用广播接收器发送模拟位置...
+2025-04-28 18:12:02,442 - HustRun.DeviceConnector - INFO - 应用广播接收器方式发送模拟位置成功
+2025-04-28 18:12:07,643 - HustRun.DeviceConnector - WARNING - 应用未设置为模拟位置应用，请在开发者选项中手动设置
+2025-04-28 18:12:14,886 - HustRun.LocationSimulator - INFO - 用户中断运动模拟
